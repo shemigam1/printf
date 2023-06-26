@@ -8,5 +8,6 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 void _puts(char *str);
+void _putnum(int n);
 
 #endif
