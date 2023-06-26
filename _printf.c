@@ -42,6 +42,16 @@ int _printf(const char *format, ...)
 					charCount++;
 				}
 			}
+			else if (format[i] == 'd' || format[i] == 'i')
+			{
+				int num;
+
+				num = va_arg(args, int);
+				if (num < 0)
+					_putchar('-');
+				_putchar(num);
+				charCount++;
+			}
 			else if (format[i] == '%')
 			{
 				_putchar('%');
