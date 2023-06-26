@@ -8,18 +8,17 @@
 
 void _putnum(int n)
 {
-	unsigned int num;
+	int num;
 
 	num = n;
 	if (n < 0)
-	{
-		num = -num;
+        {
 		_putchar('-');
+		num = -num;
 	}
-	if (num / 10 != 0)
-	{
-		n = num / 10;
-		_putnum(n);
-	}
-	_putchar(num % 10 + '0');
+	if (n == 0)
+		return;
+	n = num / 10;
+	_putnum(n);
+	_putchar((num % 10) + '0');
 }

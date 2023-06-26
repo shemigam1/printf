@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 	i = 0;
+	charCount = 0;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
@@ -46,11 +47,8 @@ int _printf(const char *format, ...)
 			{
 				int num;
 
-				num = va_arg(args, int);
-				if (num < 0)
-					_putchar('-');
-				_putchar(num);
-				charCount++;
+				num = (int)va_arg(args, int);
+				_putnum(num);
 			}
 			else if (format[i] == '%')
 			{
@@ -65,6 +63,5 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	va_end(args);
 	return (charCount);
 }
