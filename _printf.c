@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	unsigned int i;
+	unsigned int i, charCount;
 	va_start(args, format);
 
 	if (format == NULL)
@@ -23,26 +23,38 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == 'c')
-			{	
-				int c;
+			{
+				char c;
 
-				c = va_arg(args, int);
+				c = (char)va_arg(args, int);
 				_putchar(c);
-				i++;
+				charCount++;
 			}
 			else if (format[i] == 's')
 			{
 				char *s;
 
 				s = va_arg(args, char*);
-				if (s == NULL)
-					_puts("nil");
-				_puts(s);
-				i++;
+				while (*s != '\0')
+				{
+					_putchar(*s);
+					s++;
+					charCount++;
+				}
+			}
+			else if (format[i] == '%')
+			{
+				_putchar('%');
+				charCount++;
 			}
 		}
-		_putchar(format[i]);
+		else
+		{
+			_putchar(format[i]);
+			charCount++;
+		}
 		i++;
 	}
-	return (i);
+	va_end(args);
+	return (charCount);
 }
