@@ -1,18 +1,16 @@
 #include "main.h"
-
 /**
  * _printf_junction - Acts as a parser
  * @format: array of input
  * format_arr: array of specifiers
  * @args: variadic name
- *
  * Description: An acting parser function
  * Return: charCount
  */
-
 int _printf_junction(const char *format, format_t format_arr[], va_list args)
 {
 	int charCount = 0, i = 0, r = 0, j;
+
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
@@ -50,5 +48,5 @@ int _printf_junction(const char *format, format_t format_arr[], va_list args)
 		}
 		i++;
 	}
-	return (charCount);	
+	return (charCount);
 }

@@ -1,13 +1,15 @@
 #include "main.h"
+
 /**
  * _printf - prints foratted string to stdout
  * @format: string
  * Return: 0
  */
+
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int charCount;/* i = 0, r = 0, j;*/
+	int charCount;
 	format_t format_arr[] = {
 		{"c", format_c},
 		{"s", format_s},
@@ -18,46 +20,13 @@ int _printf(const char *format, ...)
 	};
 
 	if (format == NULL)
-		return (-1);
-	va_start(args, format);
-	/*while (format[i] != '\0')
 	{
-		if (format[i] == '%')
-		{
-			j = 0;
-			while (format_arr[j].c)
-			{
-				if (format[i + 1] == format_arr[j].c[0])
-				{
-					r = format_arr[j].fun(args);
-					if (r == -1)
-						return (-1);
-					charCount += r;
-					break;
-				}
-				j++;
-			}
-			if (!format_arr[j].c && format[i + 1] != ' ')
-			{
-				if (format[i + 1])
-				{
-					_putchar(format[i]);
-					_putchar(format[i + 1]);
-					charCount += 2;
-				}
-				else
-					return (-1);
-			}
-			i++;
-		}
-		else
-		{
-			_putchar(format[i]);
-			charCount++;
-		}
-		i++;
-	}*/
+		return (-1);
+	}
+	va_start(args, format);
+
 	charCount = _printf_junction(format, format_arr, args);
+
 	va_end(args);
 	return (charCount);
 }
