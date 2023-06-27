@@ -7,7 +7,7 @@
  *
  */
 
-int (*get_format(const char* format))(va_list args)
+int (*get_format(const char *format))(va_list args)
 {
 	format_t format_arr[] = {
 		{"c", format_c},

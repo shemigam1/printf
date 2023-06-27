@@ -2,8 +2,8 @@
 
 /**
  * format_c - format for %c
- * 
- * @Return: 0
+ * @args: arg
+ * Return: 0
  */
 
 int format_c(va_list args)
@@ -17,6 +17,7 @@ int format_c(va_list args)
 
 /**
  * format_s - format for %s
+ * @args: arg
  * Return: 0
  */
 
@@ -40,6 +41,8 @@ int format_s(va_list args)
 
 /**
  * format_percent - format for %
+ * @args: arg
+ * Return: int
  */
 
 int format_percent(__attribute__((unused)) va_list args)
@@ -50,7 +53,9 @@ int format_percent(__attribute__((unused)) va_list args)
 }
 
 /**
- * print_d - format for %d
+ * format_d - format for %d
+ * @args: arg
+ * Return: int
  */
 
 int format_d(va_list args)

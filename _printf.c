@@ -20,9 +20,7 @@ int _printf(const char *format, ...)
 	};
 
 	if (format == NULL)
-	{
 		return (-1);
-	}
 	charCount = 0;
 	r = 0;
 	i = 0;
@@ -31,7 +29,6 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			/*int (*format_fun)(va_list) = NULL;*/
 			j = 0;
 			while (format_arr[j].c)
 			{
@@ -54,26 +51,8 @@ int _printf(const char *format, ...)
 					charCount += 2;
 				}
 				else
-				{
 					return (-1);
-				}
 			}
-
-			/*if (format[i + 1] == '\0')
-				return (-1);
-			format_fun = get_format(&format[i + 1]);
-			if (format_fun == NULL)
-			{
-				_putchar(format[i]);
-				charCount++;
-			}
-			else
-			{
-				r = format_fun(args);
-				if (r == -1)
-					return (-1);
-				charCount += r;
-			}*/
 			i++;
 		}
 		else
