@@ -9,29 +9,29 @@
 int _putnum(int n)
 {
 	int charCount;
-	int check;
+	int flag;
 	unsigned int num;
 
-	check = 1;
+	flag = 1;
 	charCount = 0;
 	if (n < 0)
 	{
 		charCount += _putchar('-');
-		num = n * -1;
+		num = -n;
 	}
 	else
 	{
 		num = n;
 	}
-	for (; num / check > 9;)
+	while (num / flag > 9)
 	{
-		check *= 10;
+		flag *= 10;
 	}
-	while (check != 0)
+	while (flag != 0)
 	{
-		charCount += _putchar('0' + num / check);
-		num %= check;
-		check /= 10;
+		charCount += _putchar('0' + num / flag);
+		num %= flag;
+		flag /= 10;
 	}
 	return (charCount);
 }
