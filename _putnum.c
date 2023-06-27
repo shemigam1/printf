@@ -9,7 +9,7 @@
 int _putnum(int n)
 {
 	int charCount;
-	unsigned int num;
+	int num;
 
 	charCount = 0;
 	num = n;
