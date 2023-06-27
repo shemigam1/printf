@@ -18,11 +18,8 @@ int _putnum(int n)
 		num = -num;
 		charCount++;
 	}
-	if (n == 0)
-		return (-1);
-	n = num / 10;
-	charCount++;
-	_putnum(n);
+	if (num / 10 != 0)
+		charCount += _putnum(num / 10);
 	_putchar((num % 10) + '0');
-	return (charCount);
+	return (charCount + 1);
 }

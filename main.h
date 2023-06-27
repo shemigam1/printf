@@ -15,7 +15,7 @@ int _printf(const char *format, ...);
 
 typedef struct format
 {
-	char c;
+	char *c;
 	int (*fun)(va_list);
 } format_t;
 
@@ -23,7 +23,7 @@ void _puts(char *str);
 int _putnum(int n);
 int format_c(va_list args);
 int format_s(va_list args);
-int format_percent(__attribute__((unused)) va_list args);
-int (*get_function(const char *format))(va_list args);
-
+int format_d(va_list args);
+int format_percent(va_list args);
+int (*get_format(const char *format))(va_list args);
 #endif

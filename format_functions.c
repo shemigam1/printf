@@ -29,9 +29,10 @@ int format_s(va_list args)
 	if (s == NULL)
 		s = "(nil)";
 	charCount = 0;
-	while (s[charCount] != '\0')
+	while (*s != '\0')
 	{
-		_putchar(s[charCount]);
+		_putchar(*s);
+		s++;
 		charCount++;
 	}
 	return (charCount);
@@ -43,6 +44,7 @@ int format_s(va_list args)
 
 int format_percent(__attribute__((unused)) va_list args)
 {
+	(void)args;
 	_putchar('%');
 	return (1);
 }
