@@ -11,6 +11,8 @@ int _printf(const char *format, ...);
 
 /**
  * struct format - format
+ * @c: char
+ * @fun: function pointer
  */
 
 typedef struct format

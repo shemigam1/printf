@@ -26,14 +26,13 @@ int _printf(const char *format, ...)
 	charCount = 0;
 	r = 0;
 	i = 0;
-	j = 0;
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
 			/*int (*format_fun)(va_list) = NULL;*/
-
+			j = 0;
 			while (format_arr[j].c)
 			{
 				if (format[i + 1] == format_arr[j].c[0])

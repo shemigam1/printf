@@ -27,7 +27,7 @@ int format_s(va_list args)
 
 	s = va_arg(args, char*);
 	if (s == NULL)
-		s = "(nil)";
+		s = "(null)";
 	charCount = 0;
 	while (*s != '\0')
 	{
