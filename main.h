@@ -24,6 +24,6 @@ int _putnum(int n);
 int format_c(va_list args);
 int format_s(va_list args);
 int format_percent(__attribute__((unused)) va_list args);
-int (*get function(const char *format))(va_list args);
+int (*get_function(const char *format))(va_list args);
 
 #endif
