@@ -2,7 +2,7 @@
 /**
  * _printf_junction - Acts as a parser
  * @format: array of input
- * format_arr: array of specifiers
+ * @format_arr: array of specifiers
  * @args: variadic name
  * Description: An acting parser function
  * Return: charCount
