@@ -3,22 +3,26 @@
 /**
  * _putnum - prints number
  * @n: int
- * Return: void
+ * Return: charCount
  */
 
-void _putnum(int n)
+int _putnum(int n)
 {
-	int num;
+	int num, charCount;
 
+	charCount = 0;
 	num = n;
 	if (n < 0)
         {
 		_putchar('-');
 		num = -num;
+		charCount++;
 	}
 	if (n == 0)
-		return;
+		return (-1);
 	n = num / 10;
+	charCount++;
 	_putnum(n);
 	_putchar((num % 10) + '0');
+	return (charCount);
 }

@@ -48,7 +48,7 @@ int _printf(const char *format, ...)
 				int num;
 
 				num = (int)va_arg(args, int);
-				_putnum(num);
+				charCount += _putnum(num);
 			}
 			else if (format[i] == '%')
 			{
