@@ -8,18 +8,19 @@
 
 int _putnum(int n)
 {
-	int num, charCount;
+	int charCount;
+	unsigned int num;
 
 	charCount = 0;
 	num = n;
 	if (n < 0)
         {
-		_putchar('-');
 		num = -num;
+		_putchar('-');
 		charCount++;
 	}
 	if (num / 10 != 0)
 		charCount += _putnum(num / 10);
 	_putchar((num % 10) + '0');
-	return (charCount + 1);
+	return (charCount);
 }
