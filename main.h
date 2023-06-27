@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
+/* test */
 int _putchar(char c);
 int _printf(const char *format, ...);
 void _puts(char *str);

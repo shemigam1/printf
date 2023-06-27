@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _putnum - prints number
+ * _putnum - prints numbers
  * @n: int
  * Return: charCount
  */

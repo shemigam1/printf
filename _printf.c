@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _printf - prints foratted string
+ * _printf - prints foratted string to stdout
  * @format: string
  * Return: 0
  */
