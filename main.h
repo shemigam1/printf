@@ -28,4 +28,6 @@ int format_s(va_list args);
 int format_d(va_list args);
 int format_percent(va_list args);
 int (*get_format(const char *format))(va_list args);
+int _printf_junction(const char *format, format_t format_arr[], va_list args);
+
 #endif

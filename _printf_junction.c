@@ -1,26 +1,19 @@
 #include "main.h"
-/**
- * _printf - prints foratted string to stdout
- * @format: string
- * Return: 0
- */
-int _printf(const char *format, ...)
-{
-	va_list args;
-	int charCount;/* i = 0, r = 0, j;*/
-	format_t format_arr[] = {
-		{"c", format_c},
-		{"s", format_s},
-		{"d", format_d},
-		{"i", format_d},
-		{"%", format_percent},
-		{NULL, NULL}
-	};
 
-	if (format == NULL)
-		return (-1);
-	va_start(args, format);
-	/*while (format[i] != '\0')
+/**
+ * _printf_junction - Acts as a parser
+ * @format: array of input
+ * format_arr: array of specifiers
+ * @args: variadic name
+ *
+ * Description: An acting parser function
+ * Return: charCount
+ */
+
+int _printf_junction(const char *format, format_t format_arr[], va_list args)
+{
+	int charCount = 0, i = 0, r = 0, j;
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
@@ -56,8 +49,6 @@ int _printf(const char *format, ...)
 			charCount++;
 		}
 		i++;
-	}*/
-	charCount = _printf_junction(format, format_arr, args);
-	va_end(args);
-	return (charCount);
+	}
+	return (charCount);	
 }
